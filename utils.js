@@ -5,3 +5,7 @@ export function getResults(){
     const results = JSON.parse(JSONResults);
     return results;
 }
+
+export function catchPokemon(){
+    
+}
