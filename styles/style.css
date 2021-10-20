@@ -18,7 +18,13 @@ main{
 img{
     width: 200px;
 }
-#pokemon-field{
-
+input[type=radio]{
+    display: none;
 }
+
+input[type=radio]:checked + img{
+    width: 200px;
+    border: 4px solid green;
+}
+
 
