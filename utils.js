@@ -6,6 +6,12 @@ export function getResults(){
     return results;
 }
 
-export function catchPokemon(){
+export function catchPokemon(id){
+    const currentResults = getResults(); 
+    const caughtPokemon = currentResults.find(pokemon => pokemon.id === id);
+    console.log(caughtPokemon); 
+    caughtPokemon.catch ++;
+    console.log(caughtPokemon);
+    
     
 }
