@@ -3,8 +3,6 @@
 import { getPokedex, catchPokemon, seenPokemon, setPokedex } from '../utils.js';
 
 const test = QUnit.test;
-const skip = QUnit.skip;
-
 
 test('making sure the getPokemon function is working properly', (expect)=>{
 
