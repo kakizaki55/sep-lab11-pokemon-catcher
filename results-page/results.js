@@ -16,21 +16,19 @@ for (let seen of seenPokemons){
     const pokemon = findById(seen.id, allPokemons);
     
     const div = document.createElement('div');
+    
     const img = document.createElement('img');
     const header = document.createElement('header');
-    
     img.src = pokemon.url_image;
     header.textContent = pokemon.pokemon;
 
-    const saw = document.createElement('span');
+    const saw = document.createElement('p');
     const caught = document.createElement('spane');
-
     saw.textContent = `Saw: ${seen.shown}`;
     caught.textContent = `Caught: ${seen.catch}`;
 
     div.append(header, img, saw, caught);
-    console.log(div);
-
     caughtPokemonContainer.append(div);
-
+    setTimeout(5000);
 }
+

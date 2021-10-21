@@ -1,0 +1,15 @@
+#caught-pokemons{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 700px;
+}
+img{
+    width: 100px;
+}
+span{
+    margin:20px;
+}
+div{
+    margin: 20px;
+}
