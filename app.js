@@ -1,7 +1,5 @@
 import { allPokemons } from './pokemon.js';
 
-console.log(allPokemons);
-
 const pokemonContainer1 = document.getElementById('poke-Img1');
 const pokemonContainer2 = document.getElementById('poke-Img2');
 const pokemonContainer3 = document.getElementById('poke-Img3');
@@ -15,7 +13,20 @@ function randomNumber(){
 
 
 
-const renderPokemon = () =>{
+
+let randomNum1 = randomNumber();
+let randomNum2 = randomNumber();
+let randomNum3 = randomNumber();
 
 
-}
+let pokemon1 = allPokemons[randomNum1];
+pokemonContainer1.src = pokemon1.url_image;
+
+let pokemon2 = allPokemons[randomNum2];
+pokemonContainer2.src = pokemon2.url_image;
+
+let pokemon3 = allPokemons[randomNum3];
+pokemonContainer3.src = pokemon3.url_image;
+
+console.log(pokemon1, pokemon2, pokemon3);
+
