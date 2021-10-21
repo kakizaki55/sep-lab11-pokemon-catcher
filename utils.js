@@ -6,8 +6,8 @@ export function getPokedex(){
     return results;
 }
 
-export function setResults(pokemon){
-    const stringyResults = JSON.stringify(pokemon);
+export function setPokedex(pokemons){
+    const stringyResults = JSON.stringify(pokemons);
     localStorage.setItem('POKEMON', stringyResults);
 }
 
@@ -20,7 +20,7 @@ export function catchPokemon(id){
         const newPokemon = { 'id': id, 'catch': 1, 'shown': 1 };
         currentResults.push(newPokemon);
     }
-    setResults(currentResults);
+    setPokedex(currentResults);
 }
 export function seenPokemon(id){
     const currentResults = getPokedex(); 
@@ -31,5 +31,5 @@ export function seenPokemon(id){
         const newPokemon = { 'id': id, 'catch': 0, 'shown': 1 };
         currentResults.push(newPokemon);
     }
-    setResults(currentResults);
+    setPokedex(currentResults);
 }
