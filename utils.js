@@ -16,10 +16,7 @@ export function catchPokemon(id){
     const caughtPokemon = currentResults.find(pokemon => pokemon.id === id); 
     if (caughtPokemon){
         caughtPokemon.catch ++;
-    } else {
-        // const newPokemon = { 'id': id, 'catch': 1, 'shown': 1 };
-        // currentResults.push(newPokemon);
-    }
+    } 
     setPokedex(currentResults);
 }
 export function seenPokemon(id){
