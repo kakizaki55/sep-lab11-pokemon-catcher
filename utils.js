@@ -17,16 +17,16 @@ export function catchPokemon(id){
     if (caughtPokemon){
         caughtPokemon.catch ++;
     } else {
-        const newPokemon = { 'id': id, 'catch': 1, 'shown': 1 };
-        currentResults.push(newPokemon);
+        // const newPokemon = { 'id': id, 'catch': 1, 'shown': 1 };
+        // currentResults.push(newPokemon);
     }
     setPokedex(currentResults);
 }
 export function seenPokemon(id){
     const currentResults = getPokedex(); 
-    const caughtPokemon = currentResults.find(pokemon => pokemon.id === id); 
-    if (caughtPokemon){
-        caughtPokemon.shown ++;
+    const seenPokemon = currentResults.find(pokemon => pokemon.id === id); 
+    if (seenPokemon){
+        seenPokemon.shown ++;
     } else {
         const newPokemon = { 'id': id, 'catch': 0, 'shown': 1 };
         currentResults.push(newPokemon);
