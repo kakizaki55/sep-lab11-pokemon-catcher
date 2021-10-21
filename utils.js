@@ -1,6 +1,6 @@
 
 
-export function getResults(){
+export function getPokedex(){
     const JSONResults = localStorage.getItem('POKEMON') || '[]';
     const results = JSON.parse(JSONResults);
     return results;
@@ -12,14 +12,23 @@ export function setResults(pokemon){
 }
 
 export function catchPokemon(id){
-    const currentResults = getResults(); 
-    // console.log(currentResults, 'current results');
-
+    const currentResults = getPokedex(); 
     const caughtPokemon = currentResults.find(pokemon => pokemon.id === id); 
     if (caughtPokemon){
         caughtPokemon.catch ++;
     } else {
         const newPokemon = { 'id': id, 'catch': 1, 'shown': 1 };
+        currentResults.push(newPokemon);
+    }
+    setResults(currentResults);
+}
+export function seenPokemon(id){
+    const currentResults = getPokedex(); 
+    const caughtPokemon = currentResults.find(pokemon => pokemon.id === id); 
+    if (caughtPokemon){
+        caughtPokemon.shown ++;
+    } else {
+        const newPokemon = { 'id': id, 'catch': 0, 'shown': 1 };
         currentResults.push(newPokemon);
     }
     setResults(currentResults);
