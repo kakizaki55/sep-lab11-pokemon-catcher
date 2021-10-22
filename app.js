@@ -1,6 +1,14 @@
 import { allPokemons } from './pokemon.js';
 import { seenPokemon, catchPokemon, } from './utils.js';
 
+const pokemonAPI = 'https://pokedex-alchemy.herokuapp.com/api/pokedex';
+
+const getAllOfThePokemon = 
+fetch(pokemonAPI)
+    .then(response => response.json());
+
+ 
+
 const pokemonContainer1 = document.getElementById('poke-Img1');
 const pokemonContainer2 = document.getElementById('poke-Img2');
 const pokemonContainer3 = document.getElementById('poke-Img3');
@@ -63,7 +71,6 @@ submitButton.addEventListener('click', () => {
 });
 
 
-// import { fullPokemonList } from './full-pokemon.js';
+// import { fullPokemonList } from './full-pokemon.js'
 
-
-
+console.log(getAllOfThePokemon);

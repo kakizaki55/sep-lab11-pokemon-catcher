@@ -36,13 +36,8 @@ const pokemonNames = seenPokemons.map((poke) =>{
     const pokemon = findById(poke.id, allPokemons);
     return pokemon.pokemon;
 });
-console.log(seenPokemons);
 const encounteredPokemon = seenPokemons.map(poke => poke.shown);
 const catchPokemon = seenPokemons.map(poke => poke.catch);
-console.log(catchPokemon);
-
-
-
 
 const ctx = document.getElementById('results-chart');
 //eslint-disable-next-line no-undef
@@ -121,3 +116,53 @@ new Chart(caughtChart, {
 
 });
 
+const pokemonType = seenPokemons.map((poke) =>{
+    const pokemon = findById(poke.id, allPokemons);
+    return pokemon.type_1;
+});
+let typeCounts = {};
+pokemonType.forEach((type) => {
+    typeCounts[type] = (typeCounts[type] || 0) + 1;
+
+});
+let typeOf = Object.keys(typeCounts);
+let countOf = Object.values(typeCounts);
+
+const typesOfPokemon = document.getElementById('pokemon-type');
+//eslint-disable-next-line no-undef
+new Chart(typesOfPokemon, {
+    type:'radar',
+    data: {
+        labels: typeOf, 
+        datasets: [{
+            label: 'Caught Pokemon',
+            data: countOf,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+
+
+});
