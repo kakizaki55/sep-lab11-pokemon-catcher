@@ -53,6 +53,7 @@ test('making sure the add shown inceremnts by 1', (expect)=>{
     
     expect.deepEqual(actual, expected);
 });
+
 test('making setPokedex is working well', (expect) =>{
     const expected = [
         { id: 1, shown:3, catch:1 }, 
