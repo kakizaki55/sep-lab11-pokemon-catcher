@@ -74,8 +74,6 @@ new Chart(ctx, {
             }
         }
     }
-
-
 });
 const caughtChart = document.getElementById('catch-chart');
 //eslint-disable-next-line no-undef
@@ -112,8 +110,6 @@ new Chart(caughtChart, {
             }
         }
     }
-
-
 });
 
 const pokemonType = seenPokemons.map((poke) =>{
@@ -123,10 +119,12 @@ const pokemonType = seenPokemons.map((poke) =>{
 let typeCounts = {};
 pokemonType.forEach((type) => {
     typeCounts[type] = (typeCounts[type] || 0) + 1;
-
+    
 });
+
 let typeOf = Object.keys(typeCounts);
 let countOf = Object.values(typeCounts);
+
 
 const typesOfPokemon = document.getElementById('pokemon-type');
 //eslint-disable-next-line no-undef
@@ -163,6 +161,4 @@ new Chart(typesOfPokemon, {
             }
         }
     }
-
-
 });

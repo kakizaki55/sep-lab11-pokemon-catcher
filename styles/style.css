@@ -26,5 +26,21 @@ input[type=radio]:checked + img{
     border-radius: 50%;
     width: 250px;
 }
-
+#pokemon-field{
+    border: black solid 4px;
+    width: 1000px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.field{
+    background-image:url('../assets/field-backgournd.jpeg');
+    background-size: cover;
+}
+.dessert{
+    background-image:url('../assets/dessert-backgournd.png');
+    background-size: cover;
+} 
 
