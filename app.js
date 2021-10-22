@@ -61,3 +61,9 @@ submitButton.addEventListener('click', () => {
         }
     } 
 });
+
+
+// import { fullPokemonList } from './full-pokemon.js';
+
+
+
