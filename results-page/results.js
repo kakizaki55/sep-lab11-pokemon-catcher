@@ -36,8 +36,12 @@ const pokemonNames = seenPokemons.map((poke) =>{
     const pokemon = findById(poke.id, allPokemons);
     return pokemon.pokemon;
 });
+console.log(seenPokemons);
 const encounteredPokemon = seenPokemons.map(poke => poke.shown);
-console.log(encounteredPokemon);
+const catchPokemon = seenPokemons.map(poke => poke.catch);
+console.log(catchPokemon);
+
+
 
 
 const ctx = document.getElementById('results-chart');
@@ -47,7 +51,7 @@ new Chart(ctx, {
     data: {
         labels: pokemonNames, 
         datasets: [{
-            label: '# of Votes',
+            label: 'encountered Pokemon',
             data: encounteredPokemon,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -85,8 +89,8 @@ new Chart(caughtChart, {
     data: {
         labels: pokemonNames, 
         datasets: [{
-            label: '# of Votes',
-            data: encounteredPokemon,
+            label: 'Caught Pokemon',
+            data: catchPokemon,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
