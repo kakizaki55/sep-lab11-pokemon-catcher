@@ -110,11 +110,8 @@ new Chart(caughtChart, {
 });
 //i need to only pokemons with the Ids that i caught
 
-const caughtPoekmons = seenPokemons.filter((poke) => {
-    if (poke.catch){
-        return poke;
-    }
-});
+const caughtPoekmons = seenPokemons.filter(poke => poke.catch);
+
 const pokemonType = caughtPoekmons.map((poke) =>{
     const pokemon = findById(poke.id, allPokemons);
     return pokemon.type_1;
