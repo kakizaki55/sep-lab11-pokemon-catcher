@@ -1,14 +1,6 @@
 import { allPokemons } from './pokemon.js';
 import { seenPokemon, catchPokemon, } from './utils.js';
 
-const pokemonAPI = 'https://pokedex-alchemy.herokuapp.com/api/pokedex?perPage=150';
-
-const getAllOfThePokemon = 
-fetch(pokemonAPI)
-    .then(response => response.json());
-
- 
-
 const pokemonContainer1 = document.getElementById('poke-Img1');
 const pokemonContainer2 = document.getElementById('poke-Img2');
 const pokemonContainer3 = document.getElementById('poke-Img3');
@@ -69,7 +61,6 @@ submitButton.addEventListener('click', () => {
         }
     } 
 });
-
 const fieldButton = document.getElementById('field-button');
 const dessertButton = document.getElementById('dessert-button');
 const feildArea = document.getElementById('pokemon-field');
@@ -77,12 +68,10 @@ const feildArea = document.getElementById('pokemon-field');
 fieldButton.addEventListener('click', ()=> {
     feildArea.classList.add('field');
     feildArea.classList.remove('dessert');
+    renderPokemon();
 });
 dessertButton.addEventListener('click', ()=> {
     feildArea.classList.remove('field');
     feildArea.classList.add('dessert');
+    renderPokemon();
 });
-
-// import { fullPokemonList } from './full-pokemon.js'
-
-console.log(getAllOfThePokemon);

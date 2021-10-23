@@ -12,14 +12,17 @@ span{
 }
 div{
     margin: 20px;
+    
 }
 #charts{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+
+    
+    
     
 }
 section{
-    width: 500px;
+    width: 900px;
     margin: 20px;
 }

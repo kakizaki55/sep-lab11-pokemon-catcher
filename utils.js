@@ -30,3 +30,10 @@ export function seenPokemon(id){
     }
     setPokedex(currentResults);
 }
+export function getArraySum(array){
+    var total = 0;
+    for (let i in array) { 
+        total += array[i];
+    }
+    return total;
+}
